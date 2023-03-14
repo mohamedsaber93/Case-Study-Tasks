@@ -1,0 +1,9 @@
+>>>> installed packages and needed PHP dependencies: 
+•	 Install Apache2 web server and PHP 7.4.
+#sudo apt-get install apache2 php7.4 -y 
+•	Install MySQL server, client, and development libraries.
+#sudo apt-get install mysql-server mysql-client libmysqlclient-dev -y 
+•	Install additional PHP plugins required by Moodle.
+#sudo apt-get install php7.4-gd php7.4-intl php7.4-xmlrpc php7.4-soap php7.4-zip php7.4-mbstring -y.
+>>>>Note: there are other configurations sure, like set the needed permissions for the site variables, config.php, or configure the database, I did not mention because it’s a logic to do it in any application configuration but it’s available upon request.
+Consider the Os Is Ubuntu 20.X
