@@ -1,0 +1,4 @@
+# By use the netstat command:
+•	The netstat command can be used to list all listening ports on a Linux server. To list all listening ports, open the terminal and type:  #netstat -tulpn , This will show all the listening ports and the associated process ID (PID). 
+#Use the lsof command: 
+•	The lsof command can also be used to list all listening ports on a Linux server. To list all listening ports, open the terminal and type, #lsof -i -P -n | grep LISTEN, this will show all the listening ports and the associated process ID (PID).
