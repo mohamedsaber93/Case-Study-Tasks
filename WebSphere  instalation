@@ -1,0 +1,28 @@
+# This is IBM WebSphere Application Server Developer Edition v9.0 instalation script 
+#!/bin/bash
+
+# Download URL for IBM WebSphere Application Server Developer Edition v9.0
+DOWNLOAD_URL="https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wasdev_v9.0/wasdev_nocharge_dev_linux.tar.gz"
+
+# Install directory
+INSTALL_DIR="/opt/IBM/WebSphere/AppServer"
+
+# Download the installation package
+echo "Downloading IBM WebSphere Application Server Developer Edition..."
+wget -O wasdev_nocharge_dev_linux.tar.gz "$DOWNLOAD_URL"
+
+# Extract the installation files
+echo "Extracting installation files..."
+tar -xzf wasdev_nocharge_dev_linux.tar.gz
+
+# Install IBM Installation Manager
+echo "Installing IBM Installation Manager..."
+./wasdev/*/tools/imcl install com.ibm.cic.agent -repositories wasdev/*/repository.config -installationDirectory "$INSTALL_DIR/IM" -acceptLicense
+
+# Install IBM WebSphere Application Server Developer Edition
+echo "Installing IBM WebSphere Application Server Developer Edition..."
+./wasdev/*/tools/imcl install com.ibm.websphere.DEVELOPERSILAN.v90 -repositories wasdev/*/repository.config -installationDirectory "$INSTALL_DIR" -acceptLicense
+
+# Start the server
+echo "Starting IBM WebSphere Application Server Developer Edition..."
+"$INSTALL_DIR"/bin/startServer.sh server1
